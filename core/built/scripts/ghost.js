@@ -2996,24 +2996,22 @@ define("ghost/controllers/reset",
     /*global console*/
     /* jshint unused: false */
     var ajax = __dependency1__["default"];
-
     var ValidationEngine = __dependency2__["default"];
 
-    
     var ResetController = Ember.Controller.extend(ValidationEngine, {
         newPassword: '',
         ne2Password: '',
         token: '',
         submitButtonDisabled: false,
-    
+
         validationType: 'reset',
-    
+
         email: Ember.computed('token', function () {
             // The token base64 encodes the email (and some other stuff),
             // each section is divided by a '|'. Email comes second.
             return atob(this.get('token')).split('|')[1];
         }),
-    
+
         // Used to clear sensitive information
         clearData: function () {
             this.setProperties({
@@ -3022,12 +3020,12 @@ define("ghost/controllers/reset",
                 token: ''
             });
         },
-    
+
         actions: {
             submit: function () {
                 var credentials = this.getProperties('newPassword', 'ne2Password', 'token'),
                     self = this;
-    
+
                 this.toggleProperty('submitting');
                 this.validate({format: false}).then(function () {
                     ajax({
@@ -3054,7 +3052,7 @@ define("ghost/controllers/reset",
             }
         }
     });
-    
+
     __exports__["default"] = ResetController;
   });
 define("ghost/controllers/settings", 
@@ -8989,47 +8987,47 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   var buffer = '', helper, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
 
 
-  data.buffer.push("<li>\n    <a href=\"https://github.com/PaulAdamDavis\" title=\"PaulAdamDavis\">\n        <img src=\"");
+  data.buffer.push("<li>\n    <a href=\"https://github.com/jaswilli\" title=\"jaswilli\">\n        <img src=\"");
+  data.buffer.push(escapeExpression((helper = helpers['gh-path'] || (depth0 && depth0['gh-path']),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","STRING"],data:data},helper ? helper.call(depth0, "admin", "/img/contributors", options) : helperMissing.call(depth0, "gh-path", "admin", "/img/contributors", options))));
+  data.buffer.push("/jaswilli\" alt=\"jaswilli\">\n    </a>\n</li>\n<li>\n    <a href=\"https://github.com/PaulAdamDavis\" title=\"PaulAdamDavis\">\n        <img src=\"");
   data.buffer.push(escapeExpression((helper = helpers['gh-path'] || (depth0 && depth0['gh-path']),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","STRING"],data:data},helper ? helper.call(depth0, "admin", "/img/contributors", options) : helperMissing.call(depth0, "gh-path", "admin", "/img/contributors", options))));
   data.buffer.push("/PaulAdamDavis\" alt=\"PaulAdamDavis\">\n    </a>\n</li>\n<li>\n    <a href=\"https://github.com/ErisDS\" title=\"ErisDS\">\n        <img src=\"");
   data.buffer.push(escapeExpression((helper = helpers['gh-path'] || (depth0 && depth0['gh-path']),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","STRING"],data:data},helper ? helper.call(depth0, "admin", "/img/contributors", options) : helperMissing.call(depth0, "gh-path", "admin", "/img/contributors", options))));
-  data.buffer.push("/ErisDS\" alt=\"ErisDS\">\n    </a>\n</li>\n<li>\n    <a href=\"https://github.com/jaswilli\" title=\"jaswilli\">\n        <img src=\"");
-  data.buffer.push(escapeExpression((helper = helpers['gh-path'] || (depth0 && depth0['gh-path']),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","STRING"],data:data},helper ? helper.call(depth0, "admin", "/img/contributors", options) : helperMissing.call(depth0, "gh-path", "admin", "/img/contributors", options))));
-  data.buffer.push("/jaswilli\" alt=\"jaswilli\">\n    </a>\n</li>\n<li>\n    <a href=\"https://github.com/JohnONolan\" title=\"JohnONolan\">\n        <img src=\"");
-  data.buffer.push(escapeExpression((helper = helpers['gh-path'] || (depth0 && depth0['gh-path']),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","STRING"],data:data},helper ? helper.call(depth0, "admin", "/img/contributors", options) : helperMissing.call(depth0, "gh-path", "admin", "/img/contributors", options))));
-  data.buffer.push("/JohnONolan\" alt=\"JohnONolan\">\n    </a>\n</li>\n<li>\n    <a href=\"https://github.com/halfdan\" title=\"halfdan\">\n        <img src=\"");
-  data.buffer.push(escapeExpression((helper = helpers['gh-path'] || (depth0 && depth0['gh-path']),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","STRING"],data:data},helper ? helper.call(depth0, "admin", "/img/contributors", options) : helperMissing.call(depth0, "gh-path", "admin", "/img/contributors", options))));
-  data.buffer.push("/halfdan\" alt=\"halfdan\">\n    </a>\n</li>\n<li>\n    <a href=\"https://github.com/novaugust\" title=\"novaugust\">\n        <img src=\"");
-  data.buffer.push(escapeExpression((helper = helpers['gh-path'] || (depth0 && depth0['gh-path']),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","STRING"],data:data},helper ? helper.call(depth0, "admin", "/img/contributors", options) : helperMissing.call(depth0, "gh-path", "admin", "/img/contributors", options))));
-  data.buffer.push("/novaugust\" alt=\"novaugust\">\n    </a>\n</li>\n<li>\n    <a href=\"https://github.com/cobbspur\" title=\"cobbspur\">\n        <img src=\"");
+  data.buffer.push("/ErisDS\" alt=\"ErisDS\">\n    </a>\n</li>\n<li>\n    <a href=\"https://github.com/cobbspur\" title=\"cobbspur\">\n        <img src=\"");
   data.buffer.push(escapeExpression((helper = helpers['gh-path'] || (depth0 && depth0['gh-path']),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","STRING"],data:data},helper ? helper.call(depth0, "admin", "/img/contributors", options) : helperMissing.call(depth0, "gh-path", "admin", "/img/contributors", options))));
   data.buffer.push("/cobbspur\" alt=\"cobbspur\">\n    </a>\n</li>\n<li>\n    <a href=\"https://github.com/felixrieseberg\" title=\"felixrieseberg\">\n        <img src=\"");
   data.buffer.push(escapeExpression((helper = helpers['gh-path'] || (depth0 && depth0['gh-path']),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","STRING"],data:data},helper ? helper.call(depth0, "admin", "/img/contributors", options) : helperMissing.call(depth0, "gh-path", "admin", "/img/contributors", options))));
-  data.buffer.push("/felixrieseberg\" alt=\"felixrieseberg\">\n    </a>\n</li>\n<li>\n    <a href=\"https://github.com/Gargol\" title=\"Gargol\">\n        <img src=\"");
+  data.buffer.push("/felixrieseberg\" alt=\"felixrieseberg\">\n    </a>\n</li>\n<li>\n    <a href=\"https://github.com/novaugust\" title=\"novaugust\">\n        <img src=\"");
+  data.buffer.push(escapeExpression((helper = helpers['gh-path'] || (depth0 && depth0['gh-path']),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","STRING"],data:data},helper ? helper.call(depth0, "admin", "/img/contributors", options) : helperMissing.call(depth0, "gh-path", "admin", "/img/contributors", options))));
+  data.buffer.push("/novaugust\" alt=\"novaugust\">\n    </a>\n</li>\n<li>\n    <a href=\"https://github.com/JohnONolan\" title=\"JohnONolan\">\n        <img src=\"");
+  data.buffer.push(escapeExpression((helper = helpers['gh-path'] || (depth0 && depth0['gh-path']),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","STRING"],data:data},helper ? helper.call(depth0, "admin", "/img/contributors", options) : helperMissing.call(depth0, "gh-path", "admin", "/img/contributors", options))));
+  data.buffer.push("/JohnONolan\" alt=\"JohnONolan\">\n    </a>\n</li>\n<li>\n    <a href=\"https://github.com/rwjblue\" title=\"rwjblue\">\n        <img src=\"");
+  data.buffer.push(escapeExpression((helper = helpers['gh-path'] || (depth0 && depth0['gh-path']),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","STRING"],data:data},helper ? helper.call(depth0, "admin", "/img/contributors", options) : helperMissing.call(depth0, "gh-path", "admin", "/img/contributors", options))));
+  data.buffer.push("/rwjblue\" alt=\"rwjblue\">\n    </a>\n</li>\n<li>\n    <a href=\"https://github.com/Gargol\" title=\"Gargol\">\n        <img src=\"");
   data.buffer.push(escapeExpression((helper = helpers['gh-path'] || (depth0 && depth0['gh-path']),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","STRING"],data:data},helper ? helper.call(depth0, "admin", "/img/contributors", options) : helperMissing.call(depth0, "gh-path", "admin", "/img/contributors", options))));
   data.buffer.push("/Gargol\" alt=\"Gargol\">\n    </a>\n</li>\n<li>\n    <a href=\"https://github.com/sebgie\" title=\"sebgie\">\n        <img src=\"");
   data.buffer.push(escapeExpression((helper = helpers['gh-path'] || (depth0 && depth0['gh-path']),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","STRING"],data:data},helper ? helper.call(depth0, "admin", "/img/contributors", options) : helperMissing.call(depth0, "gh-path", "admin", "/img/contributors", options))));
   data.buffer.push("/sebgie\" alt=\"sebgie\">\n    </a>\n</li>\n<li>\n    <a href=\"https://github.com/jgable\" title=\"jgable\">\n        <img src=\"");
   data.buffer.push(escapeExpression((helper = helpers['gh-path'] || (depth0 && depth0['gh-path']),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","STRING"],data:data},helper ? helper.call(depth0, "admin", "/img/contributors", options) : helperMissing.call(depth0, "gh-path", "admin", "/img/contributors", options))));
-  data.buffer.push("/jgable\" alt=\"jgable\">\n    </a>\n</li>\n<li>\n    <a href=\"https://github.com/javorszky\" title=\"javorszky\">\n        <img src=\"");
+  data.buffer.push("/jgable\" alt=\"jgable\">\n    </a>\n</li>\n<li>\n    <a href=\"https://github.com/dbalders\" title=\"dbalders\">\n        <img src=\"");
   data.buffer.push(escapeExpression((helper = helpers['gh-path'] || (depth0 && depth0['gh-path']),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","STRING"],data:data},helper ? helper.call(depth0, "admin", "/img/contributors", options) : helperMissing.call(depth0, "gh-path", "admin", "/img/contributors", options))));
-  data.buffer.push("/javorszky\" alt=\"javorszky\">\n    </a>\n</li>\n<li>\n    <a href=\"https://github.com/dbalders\" title=\"dbalders\">\n        <img src=\"");
+  data.buffer.push("/dbalders\" alt=\"dbalders\">\n    </a>\n</li>\n<li>\n    <a href=\"https://github.com/javorszky\" title=\"javorszky\">\n        <img src=\"");
   data.buffer.push(escapeExpression((helper = helpers['gh-path'] || (depth0 && depth0['gh-path']),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","STRING"],data:data},helper ? helper.call(depth0, "admin", "/img/contributors", options) : helperMissing.call(depth0, "gh-path", "admin", "/img/contributors", options))));
-  data.buffer.push("/dbalders\" alt=\"dbalders\">\n    </a>\n</li>\n<li>\n    <a href=\"https://github.com/mattiascibien\" title=\"mattiascibien\">\n        <img src=\"");
-  data.buffer.push(escapeExpression((helper = helpers['gh-path'] || (depth0 && depth0['gh-path']),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","STRING"],data:data},helper ? helper.call(depth0, "admin", "/img/contributors", options) : helperMissing.call(depth0, "gh-path", "admin", "/img/contributors", options))));
-  data.buffer.push("/mattiascibien\" alt=\"mattiascibien\">\n    </a>\n</li>\n<li>\n    <a href=\"https://github.com/rwjblue\" title=\"rwjblue\">\n        <img src=\"");
-  data.buffer.push(escapeExpression((helper = helpers['gh-path'] || (depth0 && depth0['gh-path']),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","STRING"],data:data},helper ? helper.call(depth0, "admin", "/img/contributors", options) : helperMissing.call(depth0, "gh-path", "admin", "/img/contributors", options))));
-  data.buffer.push("/rwjblue\" alt=\"rwjblue\">\n    </a>\n</li>\n<li>\n    <a href=\"https://github.com/jillesme\" title=\"jillesme\">\n        <img src=\"");
+  data.buffer.push("/javorszky\" alt=\"javorszky\">\n    </a>\n</li>\n<li>\n    <a href=\"https://github.com/jillesme\" title=\"jillesme\">\n        <img src=\"");
   data.buffer.push(escapeExpression((helper = helpers['gh-path'] || (depth0 && depth0['gh-path']),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","STRING"],data:data},helper ? helper.call(depth0, "admin", "/img/contributors", options) : helperMissing.call(depth0, "gh-path", "admin", "/img/contributors", options))));
   data.buffer.push("/jillesme\" alt=\"jillesme\">\n    </a>\n</li>\n<li>\n    <a href=\"https://github.com/RaoHai\" title=\"RaoHai\">\n        <img src=\"");
   data.buffer.push(escapeExpression((helper = helpers['gh-path'] || (depth0 && depth0['gh-path']),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","STRING"],data:data},helper ? helper.call(depth0, "admin", "/img/contributors", options) : helperMissing.call(depth0, "gh-path", "admin", "/img/contributors", options))));
-  data.buffer.push("/RaoHai\" alt=\"RaoHai\">\n    </a>\n</li>\n<li>\n    <a href=\"https://github.com/hswolff\" title=\"hswolff\">\n        <img src=\"");
+  data.buffer.push("/RaoHai\" alt=\"RaoHai\">\n    </a>\n</li>\n<li>\n    <a href=\"https://github.com/IanMitchell\" title=\"IanMitchell\">\n        <img src=\"");
   data.buffer.push(escapeExpression((helper = helpers['gh-path'] || (depth0 && depth0['gh-path']),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","STRING"],data:data},helper ? helper.call(depth0, "admin", "/img/contributors", options) : helperMissing.call(depth0, "gh-path", "admin", "/img/contributors", options))));
-  data.buffer.push("/hswolff\" alt=\"hswolff\">\n    </a>\n</li>\n<li>\n    <a href=\"https://github.com/IanMitchell\" title=\"IanMitchell\">\n        <img src=\"");
+  data.buffer.push("/IanMitchell\" alt=\"IanMitchell\">\n    </a>\n</li>\n<li>\n    <a href=\"https://github.com/mattiascibien\" title=\"mattiascibien\">\n        <img src=\"");
   data.buffer.push(escapeExpression((helper = helpers['gh-path'] || (depth0 && depth0['gh-path']),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","STRING"],data:data},helper ? helper.call(depth0, "admin", "/img/contributors", options) : helperMissing.call(depth0, "gh-path", "admin", "/img/contributors", options))));
-  data.buffer.push("/IanMitchell\" alt=\"IanMitchell\">\n    </a>\n</li>\n<li>\n    <a href=\"https://github.com/iBotPeaches\" title=\"iBotPeaches\">\n        <img src=\"");
+  data.buffer.push("/mattiascibien\" alt=\"mattiascibien\">\n    </a>\n</li>\n<li>\n    <a href=\"https://github.com/halfdan\" title=\"halfdan\">\n        <img src=\"");
   data.buffer.push(escapeExpression((helper = helpers['gh-path'] || (depth0 && depth0['gh-path']),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","STRING"],data:data},helper ? helper.call(depth0, "admin", "/img/contributors", options) : helperMissing.call(depth0, "gh-path", "admin", "/img/contributors", options))));
-  data.buffer.push("/iBotPeaches\" alt=\"iBotPeaches\">\n    </a>\n</li>");
+  data.buffer.push("/halfdan\" alt=\"halfdan\">\n    </a>\n</li>\n<li>\n    <a href=\"https://github.com/matthojo\" title=\"matthojo\">\n        <img src=\"");
+  data.buffer.push(escapeExpression((helper = helpers['gh-path'] || (depth0 && depth0['gh-path']),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","STRING"],data:data},helper ? helper.call(depth0, "admin", "/img/contributors", options) : helperMissing.call(depth0, "gh-path", "admin", "/img/contributors", options))));
+  data.buffer.push("/matthojo\" alt=\"matthojo\">\n    </a>\n</li>\n<li>\n    <a href=\"https://github.com/hswolff\" title=\"hswolff\">\n        <img src=\"");
+  data.buffer.push(escapeExpression((helper = helpers['gh-path'] || (depth0 && depth0['gh-path']),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","STRING"],data:data},helper ? helper.call(depth0, "admin", "/img/contributors", options) : helperMissing.call(depth0, "gh-path", "admin", "/img/contributors", options))));
+  data.buffer.push("/hswolff\" alt=\"hswolff\">\n    </a>\n</li>");
   return buffer;
   
 }); });
